@@ -5,7 +5,7 @@ const container = document.getElementById('container')
 
 
 // 第三个参数为字符串的情况
-let vnode1 = h('div', {}, 'helloWorld')
+let vnode1 = h('span', {}, 'helloWorld')
 
 // 第三个参数为数组的情况
 let vnode2 = h('ul', {}, [
@@ -17,5 +17,5 @@ let vnode2 = h('ul', {}, [
   ])
 ])
 
-// patch(container, vnode1)
-patch(container, vnode2)
+patch(container, vnode1)
+// patch(container, vnode2)

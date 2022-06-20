@@ -92,7 +92,7 @@ const container = document.getElementById('container')
 
 
 // 第三个参数为字符串的情况
-let vnode1 = h('div', {}, 'helloWorld')
+let vnode1 = h('span', {}, 'helloWorld')
 
 // 第三个参数为数组的情况
 let vnode2 = h('ul', {}, [
@@ -126,7 +126,7 @@ export default function (oldVnode, newVnode) {
     )
   }
   // 判断是否为同一节点，根据新旧节点的el属性panduan 
-  if (oldVnode === newVnode) {
+  if (oldVnode.sel === newVnode.sel) {
     // 暂不分析
   } else { // 不是同一节点，暴力删除
     // 创建 createElement() ，将新虚拟节点转为 真实DOM
@@ -192,7 +192,7 @@ export default function createElement(vnode) {
 
 情况一：字符串替换
 
-![image-20220619173227397](https://liuxueji.oss-cn-guangzhou.aliyuncs.com/image-20220619173227397.png)
+![image-20220620180237910](https://liuxueji.oss-cn-guangzhou.aliyuncs.com/image-20220620180237910.png)
 
 情况二：数组替换
 

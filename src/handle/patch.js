@@ -12,8 +12,9 @@ export default function (oldVnode, newVnode) {
       oldVnode // 真实节点 elm
     )
   }
-  // 判断是否为同一节点，根据新旧节点的el属性panduan 
-  if (oldVnode === newVnode) {
+  // 判断是否为同一节点，根据新旧节点的sel属性panduan 
+  if (oldVnode.sel === newVnode.sel) {
+    console.log('相同节点')
     // 暂不分析
   } else { // 不是同一节点，暴力删除
     // 创建 createElement() ，将新虚拟节点转为 真实DOM
